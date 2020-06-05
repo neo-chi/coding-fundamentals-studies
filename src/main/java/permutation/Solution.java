@@ -10,16 +10,16 @@ import java.util.ArrayList;
 public class Solution {
         public static void main(String[] args) {
                 String s1 = "hello";
-                String s2 = "hellk";
+                String s2 = "helll";
                 isPermutation(s1, s2);
         }
 
         /**
-         * Returns true if s2 is a permutation of s1.
-         * @param s1 first word
-         * @param s2 second word
-         * @return boolean true if s2 is a permutation of s1.
-         */
+        * Returns true if s2 is a permutation of s1.
+        * @param s1 first word
+        * @param s2 second word
+        * @return boolean true if s2 is a permutation of s1.
+        */
         public static boolean isPermutation(String s1, String s2) {
                 // brute force
                 List<Character> s1UniqueChars = new ArrayList<Character>();
@@ -57,8 +57,8 @@ public class Solution {
                                                         break;
                                                 }
                                         }
-                                 }
-                       }
+                                }
+                        }
                         // now record each unique character in both s1 and s2.
                         for (int i = 0; i < s2.length(); i++) {
                                 Character s2Character = s2.charAt(i);
@@ -85,11 +85,66 @@ public class Solution {
                                                         break;
                                                 }
                                         }
-                                 }
-                       }
-                       System.out.println(s1UniqueChars);
-                       System.out.println(s2UniqueChars);
+                                }
+                        }
+                        System.out.println(s1UniqueChars);
+                        System.out.println(s2UniqueChars);
+                        // now get the count of each character...
+                        // COUNTUNIQUECHARS
+                        // create arraylists with initial size of those of unique chars size
+                        List<Integer> s1QuantityChars = new ArrayList<Integer>();
                         // then we get the quantity of each unique character for both s1 and s2...
+                        // for each item in s1QuantityChars,
+                        int s1uniqueCharsIdx = 0; // initialize loop persistent data
+                        for (Character c : s1UniqueChars) {
+                                int s1QuantityCounter = 0;
+                                // compare to each character in s1
+                                for (int i = 0; i < s1.length(); i++) {
+                                        // if we find a match, increment count...
+                                        if (c == s1.charAt(i)) {
+                                                s1QuantityCounter++;
+                                        } else {
+                                                // continue searching...
+                                        }
+                                }
+                                // now that we've searched the word
+                                // set the counter of that letter to the number of times we found that character.
+                                //s1QuantityChars.set(uniqueCharsIdx, s1QuantityCounter); // BROKEN
+                                s1QuantityChars.add(s1uniqueCharsIdx, s1QuantityCounter);
+                                s1uniqueCharsIdx++;
+                                // proceed to the next letter...
+                        }
+                        List<Integer> s2QuantityChars = new ArrayList<Integer>();
+                        // then we get the quantity of each unique character for both s2 and s2...
+                        // for each item in s2QuantityChars,
+                        int s2uniqueCharsIdx = 0; // initialize loop persistent data
+                        for (Character c : s2UniqueChars) {
+                                int s2QuantityCounter = 0;
+                                // compare to each character in s2
+                                for (int i = 0; i < s2.length(); i++) {
+                                        // if we find a match, increment count...
+                                        if (c == s2.charAt(i)) {
+                                                s2QuantityCounter++;
+                                        } else {
+                                                // continue searching...
+                                        }
+                                }
+                                // now that we've searched the word
+                                // set the counter of that letter to the number of times we found that character.
+                                //s2QuantityChars.set(uniqueCharsIdx, s2QuantityCounter); // BROKEN
+                                s2QuantityChars.add(s2uniqueCharsIdx, s2QuantityCounter);
+                                s2uniqueCharsIdx++;
+                                // proceed to the next letter...
+                        }
+                        // view counter results...
+                        System.out.println(s1QuantityChars);
+                        System.out.println(s2QuantityChars);
+
+                        // compare to each letter in s1
+                        // if match, increment count at that index in s1QuantityChars
+                        // if no match, do not increment,
+                        // keep looking to end of s1.
+
                 } else {
                         return false; // these are not permutations because
                         // they do not have the same number of characters.
