@@ -54,7 +54,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>permutation.App</mainClass>
+                <mainClass>permutation.Solution</mainClass>
               </manifest>
             </archive>
           </configuration>
