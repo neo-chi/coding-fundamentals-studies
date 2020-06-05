@@ -1,1 +1,2 @@
-.vscode/*
+# We don't need our workspace settings saved...
+.vscode
