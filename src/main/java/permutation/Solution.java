@@ -12,6 +12,10 @@ public class Solution {
                 String s1 = "hello";
                 String s2 = "helll";
                 isPermutation(s1, s2);
+
+                String s3 = "abbabba";
+                String s4 = "bbabbaa";
+                isPermutation(s3, s4);
         }
 
         /**
@@ -140,15 +144,43 @@ public class Solution {
                         System.out.println(s1QuantityChars);
                         System.out.println(s2QuantityChars);
 
-                        // compare to each letter in s1
-                        // if match, increment count at that index in s1QuantityChars
-                        // if no match, do not increment,
-                        // keep looking to end of s1.
+                        // now, if both the uniqueChars list and quantityChars lists are equivalent,
+                        // the words are permutations of each other
+                        // return true
+                        // else
+                        // return false
+
+                        // 1. get unique char from s1uniquechars
+                        // 2. get index of s1unique char in s2unique char
+                        // 3. compare count of those indices
+
+                        int s1UniqueCharsIdx = 0;
+                        for (Character c : s1UniqueChars) {
+                                int s2QuantityIdx = s2UniqueChars.indexOf(c);
+                                int s2Count = s2QuantityChars.get(s2QuantityIdx);
+                                int s1Count = s1QuantityChars.get(s1UniqueCharsIdx);
+
+                                String message = "s1: " + c + " -> " + s1Count;
+                                System.out.println(message);
+                                message = "s2: " + s2UniqueChars.get(s2QuantityIdx)  + " -> " + s2Count;
+                                System.out.println(message);
+                                s1UniqueCharsIdx++;
+
+                                if (s1Count == s2Count) {
+                                        continue;
+                                } else {
+                                        System.out.println(s2 + " IS NOT a permutation of " + s1);
+                                        return false;
+                                }
+                        }
+                        // if we make it to the end of this loop without returning, the two are permutations.
+                        System.out.println(s2 + " IS a permutation of " + s1);
+                        return true;
 
                 } else {
+                        System.out.println(s1 + " and " + s2 + " have different lengths.. they are NOT permutations of each other");
                         return false; // these are not permutations because
                         // they do not have the same number of characters.
                 }
-                return true;
         }
 }
