@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: permutation.AppTest
+Test set: permutation.StringPermutationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in permutation.AppTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in permutation.StringPermutationTest

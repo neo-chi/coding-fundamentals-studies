@@ -54,7 +54,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>permutation.Solution</mainClass>
+                <mainClass>stacks.Solution</mainClass>
               </manifest>
             </archive>
           </configuration>
