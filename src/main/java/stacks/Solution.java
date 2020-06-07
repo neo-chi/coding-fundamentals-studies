@@ -5,9 +5,13 @@ public class Solution
         public static void main(String[] args)
         {
                 Integer[] items = {1, 2, 3, 4, 5};
-                Stack<Integer> stack = new Stack<Integer>();
-                stack.pushAll(items); // items will be in reverse order
-                sortDescending_V1(stack);
+                Stack<Integer> s1 = new Stack<Integer>();
+                s1.pushAll(items); // items will be in reverse order
+                sortDescending_V1(s1);
+
+                Stack<Integer> s2 = new Stack<Integer>();
+                s2.pushAll(items);
+                sortDescendingSolution(s2);
         }
 
         /**
@@ -83,6 +87,40 @@ public class Solution
                 } catch (Exception e) {
                         System.out.println(e);
                 }
+        }
+
+        public static void sortDescendingSolution(Stack<Integer> s) {
+                int numTransistions = 0;
+                Stack<Integer> r = new Stack<Integer>();
+                while (!s.isEmpty()) {
+                        /* Insert each element in s in sorted order into r. */
+                        try {
+                                int tmp = s.pop();
+                                numTransistions++;
+                                while (!r.isEmpty() && r.peek() > tmp) {
+                                        s.push(r.pop());
+                                        numTransistions++;
+                                }
+                                r.push(tmp);
+                                numTransistions++;
+                        } catch (EmptyStackException e) {
+                                System.out.println("Stack is empty!");
+                        }
+                }
+
+                /* Copy the elements from r back into s. */
+                while (!r.isEmpty()) {
+                        try {
+                                s.push(r.pop());
+                                numTransistions++;
+                        } catch (Exception e) {
+                                System.out.println("Stack is empty!");
+                        }
+                }
+
+                /* Display results */
+                System.out.println(s);
+                System.out.println("number of transitions: " + numTransistions);
         }
 
 }
