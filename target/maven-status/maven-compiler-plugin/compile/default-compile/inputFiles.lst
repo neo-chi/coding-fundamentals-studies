@@ -1,6 +1,14 @@
-/home/neo/github/coding-problems/src/main/java/stacks/EmptyStackException.java
+/home/neo/github/coding-problems/src/main/java/queues/Solution.java
 /home/neo/github/coding-problems/src/main/java/permutation/Solution.java
+/home/neo/github/coding-problems/src/main/java/queues/CatNotAvailableException.java
 /home/neo/github/coding-problems/src/main/java/linkedlist/Node.java
 /home/neo/github/coding-problems/src/main/java/stacks/Solution.java
+/home/neo/github/coding-problems/src/main/java/queues/Dog.java
+/home/neo/github/coding-problems/src/main/java/queues/Cat.java
+/home/neo/github/coding-problems/src/main/java/stacks/EmptyStackException.java
+/home/neo/github/coding-problems/src/main/java/queues/AnimalNotAvailableException.java
+/home/neo/github/coding-problems/src/main/java/queues/DogNotAvailableException.java
+/home/neo/github/coding-problems/src/main/java/queues/Animal.java
+/home/neo/github/coding-problems/src/main/java/queues/AnimalShelter.java
 /home/neo/github/coding-problems/src/main/java/permutation/StringPermutation.java
 /home/neo/github/coding-problems/src/main/java/stacks/Stack.java
